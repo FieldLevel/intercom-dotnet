@@ -418,6 +418,7 @@ namespace Intercom.Clients
                     monthly_spend = c.monthly_spend,
                     custom_attributes = c.custom_attributes,
                     plan = c.plan != null ? c.plan.name : String.Empty,
+                    website = c.website,
                     remove = c.remove
                 }).ToList();
             }
@@ -438,7 +439,13 @@ namespace Intercom.Clients
                 custom_attributes = user.custom_attributes,
                 last_seen_user_agent = user.user_agent_data,
                 last_request_at = user.last_request_at,
-                unsubscribed_from_emails = user.unsubscribed_from_emails
+                unsubscribed_from_emails = user.unsubscribed_from_emails,
+                referrer = user.referrer,
+                utm_campaign = user.utm_campaign,
+                utm_content = user.utm_content,
+                utm_medium = user.utm_medium,
+                utm_source = user.utm_source,
+                utm_term = user.utm_term
             };
 
             return JsonConvert.SerializeObject(body,
